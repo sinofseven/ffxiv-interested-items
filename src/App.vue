@@ -1,32 +1,35 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <v-app-bar app>
+      <div class="d-flex align-center">
+        <v-toolbar-title>FFXIV Interested Items</v-toolbar-title>
+      </div>
+    </v-app-bar>
+
+    <v-main>
+      <v-tabs centered>
+        <v-tab to="/search">Search</v-tab>
+        <v-tab to="/saved">Saved</v-tab>
+        <v-tab to="/config">Config</v-tab>
+        <v-tab to="/about">About</v-tab>
+      </v-tabs>
+      <v-container>
+        <router-view />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { defineComponent, SetupContext } from "@vue/composition-api";
+import { loadDarkModeConfig } from "@/usecases/DarkModeConfig";
+import { loadLanguage, saveLanguage } from "@/usecases/LanguageConfig";
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default defineComponent({
+  name: "App",
+  setup(_: never, context: SetupContext) {
+    context.root.$vuetify.theme.dark = loadDarkModeConfig();
+    saveLanguage(loadLanguage());
+  }
+});
+</script>
