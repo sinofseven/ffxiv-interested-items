@@ -8,7 +8,11 @@
         一応4言語(ja, de, fr,
         en)でアイテムを検索できますが、サイトの多言語化はまだ対応していません。
       </li>
-      <li></li>
+      <li>
+        <a href="https://github.com/sinofseven/ffxiv-interested-items">
+          ソースコード
+        </a>
+      </li>
     </ul>
   </div>
 </template>
