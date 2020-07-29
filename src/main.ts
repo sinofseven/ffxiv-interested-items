@@ -6,6 +6,7 @@ import CompositionApi from "@vue/composition-api";
 import Amplify from "aws-amplify";
 import { AWS_REGION, IDENTITY_POOL_ID } from "@/aws-config";
 import VueClipboard from "vue-clipboard2";
+import "@aws-amplify/ui-vue";
 
 Vue.config.productionTip = false;
 
