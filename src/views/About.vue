@@ -10,6 +10,14 @@
       </li>
       <li>CloudSaveを使って複数端末で見ることができます</li>
       <li>
+        連絡先:
+        <a href="https://twitter.com/sinofseven" target="_blank">@sinofseven</a
+        >,
+        <a href="https://twitter.com/belias_evhemary" target="_blank"
+          >@belias_evhemary</a
+        >
+      </li>
+      <li>
         <a href="https://github.com/sinofseven/ffxiv-interested-items">
           ソースコード
         </a>
