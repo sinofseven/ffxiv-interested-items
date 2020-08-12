@@ -8,6 +8,7 @@
         @input="changeSearchWindow"
         @click:append="changeSearchWindow"
       />
+      <v-text-field v-model="searchedItemName" readonly label="Searched Name" />
     </p>
     <template v-if="isShowTable">
       <v-simple-table>
@@ -21,6 +22,9 @@
           </tbody>
         </template>
       </v-simple-table>
+    </template>
+    <template v-else>
+      <h4>No Items</h4>
     </template>
   </div>
 </template>
@@ -39,10 +43,12 @@ export default defineComponent({
   components: { SearchedItem },
   setup() {
     const itemName = ref<string>("");
+    const searchedItemName = ref<string>("");
     const data = reactive<Data>({
       searchedItems: []
     });
     const changeSearchWindow = async () => {
+      searchedItemName.value = itemName.value;
       const items = await searchItem(itemName.value);
       data.searchedItems = items;
     };
@@ -53,7 +59,8 @@ export default defineComponent({
       itemName,
       changeSearchWindow,
       data,
-      isShowTable
+      isShowTable,
+      searchedItemName
     };
   }
 });
