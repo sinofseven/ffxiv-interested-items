@@ -18,7 +18,10 @@
         >
       </li>
       <li>
-        <a href="https://github.com/sinofseven/ffxiv-interested-items">
+        <a
+          href="https://github.com/sinofseven/ffxiv-interested-items"
+          target="_blank"
+        >
           ソースコード
         </a>
       </li>
