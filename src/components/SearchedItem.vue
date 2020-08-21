@@ -115,7 +115,7 @@ export default defineComponent({
     const icon = `https://xivapi.com${props.item.Icon}`;
     const lang = loadLanguage();
     const name = resolveName(props.item, lang);
-    const loadStoneUrl: LoadStoneUrl = resolveEorzeaDatabaseUrl(props.item.ID);
+    const loadStoneUrl: LoadStoneUrl = `https://jp.finalfantasyxiv.com/lodestone/playguide/db/item/${props.item.EorzeaDatabaseId}/`;
     const data = reactive<Data>({
       isShow: false,
       addingListName: "",
